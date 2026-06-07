@@ -42,13 +42,19 @@ export default function App() {
 
   return (
     <>
-      <h1>Proper Plants</h1>
-      <PlantList
-        plants={PLANTS}
-        addToCart={addToCart}
-        removeFromCart={removeFromCart}
-      />
-      <Cart cart={cart} />
+      <section className="main-Content">
+        <h1>Proper Plants</h1>
+        <PlantList
+          plants={PLANTS}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+        />
+        <Cart
+          cart={cart}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+        />
+      </section>
     </>
   );
 }

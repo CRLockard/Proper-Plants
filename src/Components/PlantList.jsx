@@ -2,7 +2,7 @@ import PlantCard from "./PlantCard";
 
 export default function PlantList({ plants, addToCart, removeFromCart }) {
   return (
-    <section>
+    <section className="plants">
       <h2>Plants</h2>
 
       <ul className="plant-list">

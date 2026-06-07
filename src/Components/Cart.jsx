@@ -1,6 +1,6 @@
 import CartItem from "./CartItem";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, addToCart, removeFromCart }) => {
   return (
     <section className="cart">
       <h2>Cart</h2>
@@ -9,7 +9,12 @@ const Cart = ({ cart }) => {
       ) : (
         <ul>
           {cart.map((item) => (
-            <CartItem key={item.id} item={item} />
+            <CartItem
+              key={item.id}
+              item={item}
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+            />
           ))}
         </ul>
       )}
