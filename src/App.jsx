@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PLANTS from "./data";
 import PlantList from "./Components/PlantList";
+import Cart from "./Components/Cart";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -18,7 +19,7 @@ export default function App() {
       } else {
         const newCartItem = {
           ...plant,
-          quanity: 1,
+          quantity: 1,
         };
         return [...previousCart, newCartItem];
       }
@@ -30,12 +31,12 @@ export default function App() {
       return previousCart
         .map((item) => {
           if (item.id === itemToRemove.id) {
-            return { ...item, quantity: item.quanity - 1 };
+            return { ...item, quantity: item.quantity - 1 };
           } else {
             return item;
           }
         })
-        .filter((item) => item.quanity > 0);
+        .filter((item) => item.quantity > 0);
     });
   }
 
@@ -47,6 +48,7 @@ export default function App() {
         addToCart={addToCart}
         removeFromCart={removeFromCart}
       />
+      <Cart cart={cart} />
     </>
   );
 }
